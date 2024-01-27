@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${HOST}/${DB}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:db/db-changelog-master.yml
+    default-schema: public
+    contexts: migrated
+
+jwt:
+  secret: 82490E0B00DFDBB15A8C7AD680566B83E803EB9E643F88457F83C2DB0EA2F40E

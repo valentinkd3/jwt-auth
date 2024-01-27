@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: create-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: insert-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: password-encode.sql
+      relativeToChangelogFile: true
